@@ -1,47 +1,35 @@
 using System;
 
-namespace IModApi
+[AttributeUsage(AttributeTargets.Assembly)]
+public sealed class ModInfoAttribute : Attribute
 {
-    [AttributeUsage(AttributeTargets.Assembly)]
-    public sealed class ModInfoAttribute : Attribute
+    public ModInfoAttribute(string name, string author)
     {
-        public ModInfoAttribute(string name, string author)
-        {
-            Name = name;
-            Author = author;
-            Version = "1.0.0.0";
-        }
-
-        public string Name { get; }
-        public string Author { get; }
-        public string Version { get; set; }
-        public string Description { get; set; }
+        Name = name;
+        Author = author;
+        Version = "1.0.0.0";
     }
 
-    [AttributeUsage(AttributeTargets.Assembly)]
-    public sealed class ModPriorityAttribute : Attribute
-    {
-        public ModPriorityAttribute(ModPriority priority)
-        {
-            Priority = priority;
-        }
+    public string Name { get; }
+    public string Author { get; }
+    public string Version { get; set; }
+    public string Description { get; set; }
+}
 
-        public ModPriority Priority { get; }
+[AttributeUsage(AttributeTargets.Assembly)]
+public sealed class ModPriorityAttribute : Attribute
+{
+    public ModPriorityAttribute(ModPriority priority)
+    {
+        Priority = priority;
     }
 
-    public enum ModPriority
-    {
-        Low,
-        Medium,
-        High
-    }
+    public ModPriority Priority { get; }
+}
 
-    public interface IModApi
-    {
-        void InitMod(Mod mod);
-    }
-
-    public class Mod
-    {
-    }
+public enum ModPriority
+{
+    Low,
+    Medium,
+    High
 }
