@@ -1,0 +1,25 @@
+name: Build 7daye
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    name: Build on Windows
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup MSBuild path
+        uses: microsoft/setup-msbuild@v1
+
+      - name: Build WelcomePlugin
+        run: |
+          msbuild src\WelcomePlugin.csproj /p:Configuration=Release /t:Build /m
