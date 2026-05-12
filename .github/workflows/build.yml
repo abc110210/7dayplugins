@@ -18,6 +18,10 @@ jobs:
         run: |
           dotnet restore src\WelcomePlugin.csproj
 
+      - name: Build IModApi dependency
+        run: |
+          dotnet build lib\IModApi\IModApi.csproj -c Release
+
       - name: Build WelcomePlugin
         run: |
           dotnet build src\WelcomePlugin.csproj -c Release
