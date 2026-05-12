@@ -8,7 +8,8 @@
 
   <ItemGroup>
     <Reference Include="IModApi">
-      <HintPath>..\lib\IModApi.dll</HintPath>
+      <HintPath>..\lib\IModApi\bin\Release\net48\IModApi.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Assembly-CSharp">
       <HintPath>..\lib\Assembly-CSharp.dll</HintPath>
