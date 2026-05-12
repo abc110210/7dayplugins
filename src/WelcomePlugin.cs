@@ -1,8 +1,7 @@
 using System;
-using IModApi;
 using UnityEngine;
 
-[assembly: ModInfo("WelcomePlugin", "7DayPlugins", Version = "1.0.0", Description = "玩家进入服务器发送欢迎消息")] 
+[assembly: ModInfo("WelcomePlugin", "7DayPlugins", Version = "1.0.0", Description = "玩家进入服务器发送欢迎消息")]
 [assembly: ModPriority(ModPriority.Medium)]
 
 namespace WelcomePlugin
