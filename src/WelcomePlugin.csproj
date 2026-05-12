@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net48</TargetFramework>
+    <OutputType>Library</OutputType>
+    <AssemblyName>WelcomePlugin</AssemblyName>
+    <RootNamespace>WelcomePlugin</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="IModApi">
+      <HintPath>..\lib\IModApi.dll</HintPath>
+    </Reference>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>..\lib\Assembly-CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>..\lib\UnityEngine.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>
